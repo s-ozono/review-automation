@@ -28,5 +28,3 @@
 ## 参考資料
 - `docs/instruction-review.md` に共通のレビュー指示が記載されています。
 - 言語別・用途別のカスタム指示は `docs/instruction-review-*.md` を参照してください。
-# review-automation-test
-# review-automation-test
