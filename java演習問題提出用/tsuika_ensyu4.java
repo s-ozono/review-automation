@@ -94,6 +94,24 @@ class Book implements Comparable<Book>, Cloneable {
 	//書名と発行日が同じであれば、等価と判定
 	public boolean equals(Object obj) {
 		
+		//自身が引数として渡されてきた場合、無条件で true
+		if(obj == this) {
+			
+			return true;
+		}
+		
+		// null が引数として渡されてきた場合、無条件で false
+		if(obj == null) {
+			
+			return false;
+		}
+		
+		//比較し型が異なる場合、false を返す
+		if(!(obj instanceof Book)) {
+			
+			return false;
+		}
+		
 		Book matchBook = (Book) obj;
 		
 		return title.equals(matchBook.title) && publishDate.equals(matchBook.publishDate);  

@@ -1,4 +1,5 @@
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -32,7 +33,7 @@ public class TSUIKA_ENSYU3 {
 			}
 			
 			//テキストファイルの最終行から逆順に1行目まで出力
-			for(int i = list.size(); i > 0; i--) {
+			for(int i = list.size() -1; i >= 0; i--) {
 				
 				System.out.println(list.get(i));
 			}
@@ -46,16 +47,18 @@ public class TSUIKA_ENSYU3 {
 				}
 			}
 			
-		} catch(Exception exception) {
+		} catch(FileNotFoundException exception) {
 			
-			System.out.println("何らかの例外が発生しました");
+			System.out.println("ファイルが見つかりません");
 		
 		} finally {
 			
-			//ファイルを閉じる
-			fileScanner.close();
-		}
-		
+			// null でないとき、ファイルをクローズ
+			if(fileScanner != null) {
+				
+				fileScanner.close();
+			}
+		}				
 	}
 }		
 	

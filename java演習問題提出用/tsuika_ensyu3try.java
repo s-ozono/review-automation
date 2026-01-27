@@ -1,4 +1,5 @@
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -28,7 +29,7 @@ public class TSUIKA_ENSYU3TRY {
 			}
 			
 			//テキストファイルの最終行から逆順に1行目まで出力
-			for(int i = list.size(); i > 0; i--) {
+			for(int i = list.size() -1; i >= 0; i--) {
 				
 				System.out.println(list.get(i));
 			}
@@ -38,13 +39,13 @@ public class TSUIKA_ENSYU3TRY {
 				
 				if(list.get(i).equals("あいうえお")) {
 					
-					System.out.println(i + "行目");
+					System.out.println(i + 1 + "行目");
 				}
 			}
 
-		} catch(Exception exception) {
+		} catch(FileNotFoundException exception) {
 			
-			System.out.println("何らかの例外が発生しました");
+			System.out.println("ファイルが見つかりません");
 		}	
 	}
 }
