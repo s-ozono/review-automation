@@ -1,67 +1,18 @@
 
 public class ENSYU4_2 {
 
-	public class StrongBox<E> {
+	public static void main(String[] args) {
 		
-		private E date;
-		private KeyType keyType;
-		private int count;
+		// StrongBoxのインスタンスを生成
+		StrongBox<String> sb = new StrongBox<String>(KeyType.PADLOCK);
 		
-		public StrongBox(KeyType keyName ) {
-			this.keyType = keyName;
-			
-		}
+		// StringBoxクラスの変数dataに値を設定
+		sb.put("宝");
 		
-		public void put(E d) {
-			
-			this.date = d;
-		}
+		//StringBoxクラスのcountを1増やし変数dataの値を取得 
+		String s = sb.get();
 		
-		public E get() {
-			
-			++count;
-			
-			switch(this.keyType) {
-			
-				case PADLOCK -> {
-				
-					if(count < 1024) {
-						
-						return null;
-					
-						}
-					}
- 				case BUTTON -> {
- 					
- 					if(count < 10000) {
- 						
- 						return null;
- 						
- 						}
- 					}
- 				case DIAL -> {
- 					
- 					if(count < 30000) {
- 						
- 						return null;
- 						
- 						}
- 					}
- 				case FINGER -> {
- 					
- 					if(count < 1000000) {
- 						
- 						return null;
- 						
- 						}
- 					}
-			}
-			return this.date;	
+		System.out.println(s);
+		
 	}
-	
-	enum KeyType {
-		
-		PADLOCK, BUTTON, DIAL, FINGER;
-	}
-}
 }

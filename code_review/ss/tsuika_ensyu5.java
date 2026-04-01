@@ -1,28 +1,33 @@
 
 public class TSUIKA_ENSYU5 {
-
-	(1)
-	[正規表現パターン]
-	.
-			
-	[処理]
-	String s = "Java";
-	s.matches(".");
 	
-	(2)
-	[正規表現パターン]
-	A[\d][\d\s]
-			
-	[処理]
-	String s = "Java";
-	s.matches("A[\d][\d\s]");
+	public static void main(String[] args) {
 	
-	(3)
-	[正規表現パターン]
-	U[A-Z] {3}
-	
-	{処理]
-	String s = "Java";
-	s.matchs("U[A-Z]{3}");
-
+		// 検索する文字列を用意
+		String s = "Java";
+		
+		String for2 = "A8";
+		
+		String for3 = "USSS";
+		
+		// 正規表現と一致しているか確認し表示
+		System.out.println(s.matches(".*"));
+		
+		System.out.println(for2.matches("A[0-9][0-9]?"));
+		
+		System.out.println(s.matches("A[0-9][0-9]?"));
+		
+		System.out.println(for3.matches("U[A-Z]{3}"));
+		
+		System.out.println(s.matches("U[A-Z]{3}"));
+	}
 }
+
+(1)
+.*
+
+(2)
+A[0-9][0-9]?
+		
+(3)
+U[A-Z]{3}

@@ -3,16 +3,16 @@ public class ENSYU4_1 {
 
 	public class StrongBox<E> {
 		
-		private E date;
+		private E data;
 		
 		public void put(E d) {
 			
-			this.date = d;
+			this.data = d;
 		}
 		
 		public E get() {
 			
-			return this.date;
+			return this.data;
 		}	
 	}	
 }
