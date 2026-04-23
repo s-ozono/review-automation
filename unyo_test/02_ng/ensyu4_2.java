@@ -60,7 +60,7 @@ public class StrongBox<T> {
 		String result = null;
 
 		// get()を繰り返し呼び出す
-		for (int i = 0; i < 1100; i++) {
+		for (int i = 0; i < 1200; i++) {
 
 			// 金庫から値を取得
 			result = box.get();
