@@ -1,4 +1,4 @@
-public class TSUIKA_ENSYU1_NG {
+public class TSUIKA_ENSYU1 {
 
 	public static void main(String[] args) {
 
