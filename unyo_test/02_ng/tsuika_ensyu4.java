@@ -1,6 +1,6 @@
 import java.util.Date;
 
-public class TSUIKA_ENSYU4 {
+public class Book {
 
 	// 書名
 	private String title;
@@ -17,8 +17,8 @@ public class TSUIKA_ENSYU4 {
 	// 書名と発行日ではなく、コメントだけで比較している
 	@Override
 	public boolean equals(Object obj) {
-		if (obj instanceof TSUIKA_ENSYU4_NG) {
-			TSUIKA_ENSYU4_NG book = (TSUIKA_ENSYU4_NG) obj;
+		if (obj instanceof Book) {
+			Book book = (Book) obj;
 			return this.comment.equals(book.comment);
 		}
 		return false;
@@ -33,14 +33,14 @@ public class TSUIKA_ENSYU4 {
 
 	// Comparableを実装していないのにcompareToっぽいメソッドを独自定義
 	// しかも発行日ではなく書名で比較している
-	public int compareTo(TSUIKA_ENSYU4_NG other) {
+	public int compareTo(Book other) {
 		return this.title.compareTo(other.title);
 	}
 
 	// clone()を不適切に実装
 	// 深いコピーではなく同じDateインスタンスを共有している
-	public TSUIKA_ENSYU4_NG clone() {
-		TSUIKA_ENSYU4_NG copy = new TSUIKA_ENSYU4_NG();
+	public Book clone() {
+		Book copy = new Book();
 		copy.title = this.title;
 		copy.publishDate = this.publishDate;
 		copy.comment = this.comment;
