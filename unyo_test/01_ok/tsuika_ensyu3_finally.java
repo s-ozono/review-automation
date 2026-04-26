@@ -9,6 +9,12 @@ public class TSUIKA_ENSYU3_Finally {
 
 	public static void main(String[] args) {
 
+		if (args.length == 0) {
+			System.err.println("エラー: ファイル名が指定されていません。");
+			System.err.println("使用法: java TSUIKA_ENSYU3_Finally <ファイル名>");
+			return; // プログラムを終了
+	    }
+
 		List<String> list = new ArrayList<>();
 		
 		BufferedReader br = null;
@@ -29,7 +35,7 @@ public class TSUIKA_ENSYU3_Finally {
 
 		} catch (IOException e) {
 
-			System.out.println("読み込みエラー");
+			System.err.println("ファイル読み込みエラーが発生しました: " + e.getMessage());
 
 		} finally {
 
@@ -40,7 +46,7 @@ public class TSUIKA_ENSYU3_Finally {
 
 			} catch (IOException e) {
 
-				System.out.println("クローズエラー");
+				System.err.println("ファイルのクローズ中にエラーが発生しました: " + e.getMessage());
 
 			}
 

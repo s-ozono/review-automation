@@ -24,9 +24,11 @@ public class TSUIKA_ENSYU3_Try {
 
 			}
 
+			br.close();
+
 		} catch (IOException e) {
 
-			System.out.println("読み込みエラー");
+			System.err.println("ファイル読み込みエラーが発生しました: " + e.getMessage());
 
 		}
 
