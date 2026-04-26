@@ -24,15 +24,35 @@ public class Book implements Comparable<Book>, Cloneable {
 
 	// 発行日の取得
 	public Date getPublishDate() {
-		return publishDate;
+
+		if(publishDate != null) {
+
+			return (Date)publishDate.clone();
+
+		} else {
+
+			return null;
+
+		}
+
 	}
 
 	// 発行日の設定
 	public void setPublishDate(Date publishDate) {
-		this.publishDate = publishDate;
+
+		if(publishDate != null) {
+
+			this.publishDate = (Date)publishDate.clone();
+
+		} else {
+
+			this.publishDate = null;
+
+		}
+
 	}
 
-	// コメントの取得
+		// コメントの取得
 	public String getComment() {
 		return comment;
 	}
